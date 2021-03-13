@@ -114,38 +114,7 @@ img {
 .suptitle-dark-theme {
   color: #ffffff;
 }
-.social-list {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.social-list-link {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  background-color: #ffffff;
-}
-.social-list-icon {
-  width: 20px;
-  height: 20px;
-  fill: #afb1b8;
-}
-.social-list-link:hover,
-.social-list-link:focus {
-  background-color: var(--accent-color);
-}
 
-.social-list-link:hover .social-list-icon,
-.social-list-link:focus .social-list-icon {
-  fill: var(--primary-white-color);
-}
-.feature-list-icon {
-  width: 70px;
-  height: 70px;
-}
 /* =====END COMPONENTS===== */
 /* =========SITE-NAV================ */
 
@@ -230,20 +199,13 @@ img {
   fill: currentColor;
   margin-right: 10px;
 }
-/* .contacts-link:hover .contacts-mail-img,
-.contacts-link:focus .contacts-mail-img {
-  fill: var(--accent-color);
-} */
+
 .contacts-phone-img {
   width: 10px;
   height: 16px;
   fill: currentColor;
   margin-right: 10px;
 }
-/* .contacts-link:hover .contacts-phone-img,
-.contacts-.link:focus .contacts-phone-img {
-  fill: var(--accent-color);
-} */
 
 /* =====END SITE-NAV====== */
 /* ==========HERO============ */
@@ -317,7 +279,6 @@ img {
   justify-content: center;
   align-items: center;
 }
-/* .feature-list-icon {width: ;} */
 
 /*============= END ПРЕИМУЩЕСТВА============== */
 /* ========О СЕБЕ======= */
@@ -338,18 +299,20 @@ img {
 }
 .team-list {
   display: flex;
+  align-items: flex-start;
 }
 .team-list-item {
   background-color: #ffffff;
-  padding: 30px 59px 30px 59px;
+  padding: 30px 32px 30px 32px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 0px 0px 4px 4px;
+  width: 270px;
 }
 
 .image-item {
-  margin-right: 30px;
-
+  flex-basis: calc((100%-90) / 4);
+  /* margin-right: 30px; */
   display: flex;
   flex-direction: column;
 }
@@ -358,6 +321,38 @@ img {
 }
 .title-names {
   margin-bottom: 10px;
+}
+.social-list {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-between; */
+}
+.social-list-item {
+  width: 206px;
+}
+
+.social-list-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+.social-list-icon {
+  width: 20px;
+  height: 20px;
+  fill: #afb1b8;
+}
+.social-list-link:hover,
+.social-list-link:focus {
+  background-color: var(--accent-color);
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  fill: var(--primary-white-color);
 }
 
 /* ===========END КОМАНДА=========== */
@@ -392,32 +387,37 @@ img {
 /* =================End Постоянные клиенты */
 /* ======ПОДВАЛ===== */
 .footer {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
   padding: 60px 0px 60px 0px;
   background-color: #2f303a;
 }
 
-.address-name {
+.footer-address-link {
+  margin: 0 0 9px 0;
   font-weight: 400;
   font-size: 14px;
   line-height: 1.71px;
   letter-spacing: 0.03em;
   color: #ffffff;
 }
-
-.contacts {
+.footer-contacts-link {
+  font-style: normal;
   font-weight: normal;
   font-size: 14px;
-  line-height: 1.71px;
+  line-height: 1.71;
   letter-spacing: 0.03em;
+
   color: rgba(255, 255, 255, 0.6);
 }
+.footer-contacts-link:not(.footer-contacts-link:last-child) {
+  margin: 0 0 9px 0;
+}
+
 .footer-container {
   display: flex;
   align-items: baseline;
 }
-.adress-set {
+.address-set {
   display: flex;
   flex-direction: column;
   margin-bottom: -20px;
@@ -425,8 +425,8 @@ img {
 .suptitle-dark-theme {
   margin-bottom: 20px;
 }
-.contacts {
-  margin-top: 10px;
+
+.footer-contacts-link {
 }
 .footer-social-set {
   display: flex;
@@ -443,7 +443,7 @@ img {
   margin-bottom: 20px;
 }
 
-.footer-container .adress-set + .footer-social-set {
+.footer-social-set {
   margin-left: 70px;
 }
 .footer-social-list {
@@ -520,11 +520,14 @@ img {
   flex-wrap: wrap;
 }
 .works-list-link {
-  display: block;
+  display: inline-block;
 }
-.works-list-item:hover {
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+.works-list:hover .link,
+.works-list:focus .link {
+  box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
+    1px 4px 6px rgba(0, 0, 0, 0.16);
 }
+
 .card-content {
   padding: 20px 24px;
   border: 1px solid #eeeeee;
